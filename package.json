@@ -1,0 +1,23 @@
+{
+  "name": "@hotell/schematics",
+  "version": "0.0.0",
+  "description": "Angular CLI schematics with better defaults",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && jasmine **/*_spec.js"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "author": "Martin Hochel <hochelmartin@gmail.com>",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "0.4.5",
+    "@angular-devkit/schematics": "0.4.5",
+    "@types/jasmine": "^2.8.6",
+    "@types/node": "^8.0.31",
+    "jasmine": "^3.1.0",
+    "typescript": "2.7.2"
+  }
+}
