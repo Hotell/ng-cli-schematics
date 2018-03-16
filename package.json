@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "description": "Angular CLI schematics with better defaults",
   "scripts": {
+    "prebuilt": "yarn verify",
     "build": "tsc",
     "test": "yarn build && jasmine **/*_spec.js",
     "format": "prettier src/**/*.{ts,tsx,json,md,scss,css,less} --write",
     "lint": "tslint --project tsconfig.json --format codeFrame",
     "verify": "yarn format --list-different && yarn test",
     "commit": "git-cz",
+    "prerelease": "yarn build",
+    "release": "standard-version",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "lint-staged",
     "prepush": "yarn verify"
@@ -48,6 +51,7 @@
     "jasmine": "3.1.0",
     "lint-staged": "7.0.0",
     "prettier": "1.11.1",
+    "standard-version": "4.3.0",
     "tslint": "5.9.1",
     "tslint-config-prettier": "1.10.0",
     "tslint-config-standard": "7.0.0",
