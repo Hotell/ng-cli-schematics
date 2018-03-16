@@ -6,7 +6,9 @@
     "build": "tsc",
     "test": "yarn build && jasmine **/*_spec.js",
     "format": "prettier src/**/*.{ts,tsx,json,md,scss,css,less} --write",
+    "lint": "tslint --project tsconfig.json --format codeFrame",
     "verify": "yarn format --list-different && yarn test",
+    "commit": "git-cz",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "lint-staged",
     "prepush": "yarn verify"
@@ -18,6 +20,11 @@
   "license": "MIT",
   "schematics": "./src/collection.json",
   "repository": "git@github.com:Hotell/ng-cli-schematics.git",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "lint-staged": {
     "{src,e2e}/**/*.{js,jsx,ts,tsx}": [
       "yarn lint",
@@ -36,10 +43,14 @@
     "@commitlint/config-conventional": "6.1.3",
     "@types/jasmine": "2.8.6",
     "@types/node": "^8.9.5",
+    "commitizen": "2.9.6",
     "husky": "0.14.3",
     "jasmine": "3.1.0",
     "lint-staged": "7.0.0",
     "prettier": "1.11.1",
+    "tslint": "5.9.1",
+    "tslint-config-prettier": "1.10.0",
+    "tslint-config-standard": "7.0.0",
     "typescript": "2.7.2"
   }
 }
