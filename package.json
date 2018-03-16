@@ -1,5 +1,5 @@
 {
-  "name": "@hotell/schematics",
+  "name": "@martin_hotell/schematics",
   "version": "0.0.0",
   "description": "Angular CLI schematics with better defaults",
   "scripts": {
