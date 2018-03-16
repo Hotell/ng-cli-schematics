@@ -9,7 +9,7 @@
     "format": "prettier src/**/*.{ts,tsx,json,md,scss,css,less} --write",
     "lint": "tslint --project tsconfig.json --format codeFrame",
     "verify": "yarn format --list-different && yarn test",
-    "commit": "git-cz",
+    "cz": "git-cz",
     "prerelease": "yarn build",
     "release": "standard-version",
     "commitmsg": "commitlint -e $GIT_PARAMS",

@@ -11,6 +11,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "strict": true,
+    "strictFunctionTypes": false,
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedParameters": true,
@@ -27,6 +28,7 @@
     "src/**/*"
   ],
   "exclude": [
-    "src/*/files/**/*"
+    "src/*/files/**/*",
+    "src/*/other-files/**/*"
   ]
 }

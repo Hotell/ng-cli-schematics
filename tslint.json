@@ -4,6 +4,11 @@
     "tslint-config-standard",
     "tslint-config-prettier"
   ],
+  "linterOptions": {
+    "exclude": [
+      "src/utility/**"
+    ]
+  },
   "jsRules": {},
   "rules": {},
   "rulesDirectory": []
