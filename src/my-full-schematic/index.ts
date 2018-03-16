@@ -10,10 +10,9 @@ import {
   url,
 } from '@angular-devkit/schematics';
 
-
 // Instead of `any`, it would make sense here to get a schema-to-dts package and output the
 // interfaces so you get type-safe options.
-export default function (options: any): Rule {
+export default function(options: any): Rule {
   // The chain rule allows us to chain multiple rules and apply them one after the other.
   return chain([
     (_tree: Tree, context: SchematicContext) => {
@@ -42,11 +41,13 @@ export default function (options: any): Rule {
     //                     extension), does not support additional functions if you don't pass
     //                     them in, and only work on text files (we use an algorithm to detect
     //                     if a file is binary or not).
-    mergeWith(apply(url('./files'), [
-      template({
-        INDEX: options.index,
-        name: options.name,
-      }),
-    ])),
+    mergeWith(
+      apply(url('./files'), [
+        template({
+          INDEX: options.index,
+          name: options.name,
+        }),
+      ])
+    ),
   ]);
 }
