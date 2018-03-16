@@ -6,7 +6,9 @@
   ],
   "linterOptions": {
     "exclude": [
-      "src/utility/**"
+      "src/utility/**",
+      "src/**/files",
+      "src/**/other-files"
     ]
   },
   "jsRules": {},
