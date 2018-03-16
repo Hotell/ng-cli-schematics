@@ -6,7 +6,7 @@
     "prebuilt": "yarn verify",
     "build": "tsc",
     "test": "tsc && jasmine **/*_spec.js",
-    "format": "prettier src/**/{index,index_spec,schema,collection}*.{ts,json}",
+    "format": "prettier src/**/*.{ts,js,json,md,scss,less,css} --config .prettierrc",
     "lint": "tslint --project tsconfig.json --format codeFrame",
     "verify": "yarn format --list-different && yarn test",
     "cz": "git-cz",
@@ -33,8 +33,8 @@
       "yarn lint",
       "git add"
     ],
-    "src/**/{index,index_spec,schema,collection}*.{ts,json}": [
-      "prettier --write",
+    "src/**/*.{ts,js,json,md,scss,less,css}": [
+      "prettier --write --config .prettierrc",
       "git add"
     ]
   },

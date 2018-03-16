@@ -1,5 +1,6 @@
-src/**/files/*.json
-src/**/other-files/*.json
+src/**/files/**/*
+src/**/other-files/**/*
+*.map
 package.json
 tsconfig.json
 tslint.json
