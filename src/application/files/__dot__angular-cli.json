@@ -30,11 +30,7 @@
       "serviceWorker": true<% } %>
     }
   ],
-  "e2e": {
-    "protractor": {
-      "config": "./protractor.conf.js"
-    }
-  },
+  "e2e": {},
   "lint": [
     {
       "project": "<%= sourceDir %>/tsconfig.app.json",
@@ -49,11 +45,7 @@
       "exclude": "**/node_modules/**"
     }
   ],
-  "test": {
-    "karma": {
-      "config": "./karma.conf.js"
-    }
-  },
+  "test": {},
   "defaults": {
     "styleExt": "<%= style %>",<% if (minimal || skipTests) { %>
     "class": {
