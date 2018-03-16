@@ -19,5 +19,6 @@
     "@types/node": "^8.0.31",
     "jasmine": "^3.1.0",
     "typescript": "2.7.2"
-  }
+  },
+  "repository": "git@github.com:Hotell/ng-cli-schematics.git"
 }
