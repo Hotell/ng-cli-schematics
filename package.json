@@ -1,6 +1,6 @@
 {
   "name": "@mhotell/schematics",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Angular CLI schematics with better defaults",
   "scripts": {
     "prebuilt": "yarn verify",
