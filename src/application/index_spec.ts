@@ -34,17 +34,26 @@ describe('Application Schematic', () => {
 
     const tree = schematicRunner.runSchematic('application', options);
     const files = tree.files;
+
+    expect(files.indexOf('/foo/.vscode/settings.json')).toBeGreaterThanOrEqual(0);
+    expect(files.indexOf('/foo/.vscode/extensions.json')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/.editorconfig')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/.angular-cli.json')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/.gitignore')).toBeGreaterThanOrEqual(0);
-    expect(files.indexOf('/foo/karma.conf.js')).toBeGreaterThanOrEqual(0);
+    expect(files.indexOf('/foo/.prettierrc')).toBeGreaterThanOrEqual(0);
+    expect(files.indexOf('/foo/.prettierignore')).toBeGreaterThanOrEqual(0);
+    expect(files.indexOf('/foo/jest.config.js')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/package.json')).toBeGreaterThanOrEqual(0);
-    expect(files.indexOf('/foo/protractor.conf.js')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/README.md')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/tsconfig.json')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/tslint.json')).toBeGreaterThanOrEqual(0);
+
     expect(files.indexOf('/foo/e2e/app.e2e-spec.ts')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/e2e/app.po.ts')).toBeGreaterThanOrEqual(0);
+    expect(files.indexOf('/foo/e2e/environment.ts')).toBeGreaterThanOrEqual(0);
+    expect(files.indexOf('/foo/e2e/utils/browser.ts')).toBeGreaterThanOrEqual(0);
+    expect(files.indexOf('/foo/e2e/utils/index.ts')).toBeGreaterThanOrEqual(0);
+
     expect(files.indexOf('/foo/src/favicon.ico')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/index.html')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/main.ts')).toBeGreaterThanOrEqual(0);
