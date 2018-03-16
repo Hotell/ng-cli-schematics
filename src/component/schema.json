@@ -85,7 +85,7 @@
       "format": "html-selector",
       "description": "The selector to use for the component."
     },
-    "module":  {
+    "module": {
       "type": "string",
       "description": "Allows specification of the declaring module.",
       "alias": "m"
@@ -96,7 +96,5 @@
       "description": "Specifies if declaring module exports the component."
     }
   },
-  "required": [
-    "name"
-  ]
+  "required": ["name"]
 }

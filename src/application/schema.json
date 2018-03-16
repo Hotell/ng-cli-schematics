@@ -115,10 +115,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "name",
-            "email"
-          ]
+          "required": ["name", "email"]
         }
       ]
     },
@@ -133,6 +130,5 @@
       "default": false
     }
   },
-  "required": [
-  ]
+  "required": []
 }

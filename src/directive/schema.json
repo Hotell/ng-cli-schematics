@@ -55,7 +55,7 @@
       "description": "Flag to indicate if a dir is created.",
       "default": true
     },
-    "module":  {
+    "module": {
       "type": "string",
       "description": "Allows specification of the declaring module.",
       "alias": "m"
@@ -66,7 +66,5 @@
       "description": "Specifies if declaring module exports the directive."
     }
   },
-  "required": [
-    "name"
-  ]
+  "required": ["name"]
 }
