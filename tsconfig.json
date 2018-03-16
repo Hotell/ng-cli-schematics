@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "rootDir": "src/",
-    "outDir": "out-tsc",
+    // "outDir": "out-tsc",
     "lib": [
       "es2017",
       "dom"
