@@ -4,7 +4,12 @@
   "description": "Angular CLI schematics with better defaults",
   "scripts": {
     "build": "tsc",
-    "test": "npm run build && jasmine **/*_spec.js"
+    "test": "yarn build && jasmine **/*_spec.js",
+    "format": "prettier src/**/*.{ts,tsx,json,md,scss,css,less} --write",
+    "verify": "yarn format --list-different && yarn test",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
+    "precommit": "lint-staged",
+    "prepush": "yarn verify"
   },
   "keywords": [
     "schematics"
@@ -12,13 +17,29 @@
   "author": "Martin Hochel <hochelmartin@gmail.com>",
   "license": "MIT",
   "schematics": "./src/collection.json",
-  "dependencies": {
+  "repository": "git@github.com:Hotell/ng-cli-schematics.git",
+  "lint-staged": {
+    "{src,e2e}/**/*.{js,jsx,ts,tsx}": [
+      "yarn lint",
+      "git add"
+    ],
+    "{src,e2e}/**/*.{js,jsx,ts,tsx,css,scss,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
     "@angular-devkit/core": "0.4.5",
     "@angular-devkit/schematics": "0.4.5",
+    "@commitlint/cli": "6.1.3",
+    "@commitlint/config-conventional": "6.1.3",
     "@types/jasmine": "2.8.6",
     "@types/node": "^8.9.5",
+    "husky": "0.14.3",
     "jasmine": "3.1.0",
+    "lint-staged": "7.0.0",
+    "prettier": "1.11.1",
     "typescript": "2.7.2"
-  },
-  "repository": "git@github.com:Hotell/ng-cli-schematics.git"
+  }
 }
