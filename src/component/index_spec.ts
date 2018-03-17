@@ -9,7 +9,7 @@ import { Tree, VirtualTree } from '@angular-devkit/schematics';
 import { SchematicTestRunner } from '@angular-devkit/schematics/testing';
 import * as path from 'path';
 import { createAppModule, getFileContent } from '../utility/test';
-import { Schema as ComponentOptions } from './schema';
+import { AngularComponentOptionsSchema as ComponentOptions } from './schema';
 
 describe('Component Schematic', () => {
   const schematicRunner = new SchematicTestRunner(

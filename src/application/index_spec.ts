@@ -8,7 +8,7 @@
 import { SchematicTestRunner, UnitTestTree } from '@angular-devkit/schematics/testing';
 import * as path from 'path';
 import { getFileContent } from '../utility/test';
-import { Schema as ApplicationOptions } from './schema';
+import { AngularApplicationOptionsSchema as ApplicationOptions } from './schema';
 
 describe('Application Schematic', () => {
   const schematicRunner = new SchematicTestRunner(

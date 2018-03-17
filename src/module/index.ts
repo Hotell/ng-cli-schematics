@@ -25,7 +25,7 @@ import * as ts from 'typescript';
 import { addImportToModule } from '../utility/ast-utils';
 import { InsertChange } from '../utility/change';
 import { findModuleFromOptions } from '../utility/find-module';
-import { Schema as ModuleOptions } from './schema';
+import { AngularModuleOptionsSchema as ModuleOptions } from './schema';
 
 function addDeclarationToNgModule(options: ModuleOptions): Rule {
   return (host: Tree) => {

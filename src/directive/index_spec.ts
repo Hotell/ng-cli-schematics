@@ -9,7 +9,7 @@ import { Tree, VirtualTree } from '@angular-devkit/schematics';
 import { SchematicTestRunner } from '@angular-devkit/schematics/testing';
 import * as path from 'path';
 import { createAppModule, getFileContent } from '../utility/test';
-import { Schema as DirectiveOptions } from './schema';
+import { AngularDirectiveOptionsSchema as DirectiveOptions } from './schema';
 
 describe('Directive Schematic', () => {
   const schematicRunner = new SchematicTestRunner(
