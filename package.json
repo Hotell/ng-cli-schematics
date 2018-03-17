@@ -6,13 +6,14 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "prebuilt": "yarn verify",
+    "prebuild": "yarn generate:schemas && yarn verify",
     "build": "tsc",
     "test": "tsc && jasmine src/**/*_spec.js",
     "format": "prettier src/**/*.{ts,js,json,md,scss,less,css} --config .prettierrc --write",
     "lint": "tslint --project tsconfig.json --format codeFrame --fix",
     "style": "yarn format && yarn lint",
-    "verify": "yarn format -l && yarn lint && yarn test",
+    "verify": "yarn format && yarn lint && yarn test",
+    "generate:schemas":"node scripts/generate-schema-defs.js",
     "cz": "git-cz",
     "prerelease": "yarn build",
     "release": "standard-version",
