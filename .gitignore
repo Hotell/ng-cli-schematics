@@ -2,6 +2,8 @@
 src/**/*.js
 src/**/*.js.map
 src/**/*.d.ts
+!src/**/files/**/*.d.ts
+!src/**/other-files/**/*.d.ts
 out-tsc
 
 # IDEs
