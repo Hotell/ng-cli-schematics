@@ -28,6 +28,12 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"],
+    "rules": {
+      "header-max-length": [2, "always", 100]
+    }
+  },
   "lint-staged": {
     "{src}/**/*.{js,jsx,ts,tsx}": [
       "yarn lint",
