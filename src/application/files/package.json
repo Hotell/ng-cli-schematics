@@ -13,7 +13,8 @@
     "e2e:ci": "testcafe all e2e/**/*.e2e-spec.ts --app 'npm start' --app-init-delay 5000",<% } %>
     "lint": "ng lint --format codeFrame --fix",
     "format": "prettier {src,e2e}/**/*.{ts,tsx,json,md,scss,css,less} --write",
-    "style": "npm run format && npm run lint"
+    "style": "npm run format && npm run lint",
+    "precommit": "lint-staged"
   },
   "lint-staged": {
     "{src,e2e}/**/*.{js,jsx,ts,tsx}": [
