@@ -27,25 +27,25 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^5.2.0",
-    "@angular/common": "^5.2.0",
-    "@angular/compiler": "^5.2.0",
-    "@angular/core": "^5.2.0",
-    "@angular/forms": "^5.2.0",
-    "@angular/http": "^5.2.0",
-    "@angular/platform-browser": "^5.2.0",
-    "@angular/platform-browser-dynamic": "^5.2.0",
-    "@angular/router": "^5.2.0",<% if (serviceWorker) { %>
-    "@angular/service-worker": "^5.2.0",<% } %>
+    "@angular/animations": "^5.2.9",
+    "@angular/common": "^5.2.9",
+    "@angular/compiler": "^5.2.9",
+    "@angular/core": "^5.2.9",
+    "@angular/forms": "^5.2.9",
+    "@angular/http": "^5.2.9",
+    "@angular/platform-browser": "^5.2.9",
+    "@angular/platform-browser-dynamic": "^5.2.9",
+    "@angular/router": "^5.2.9",<% if (serviceWorker) { %>
+    "@angular/service-worker": "^5.2.9",<% } %>
     "core-js": "2.5.3",
     "rxjs": "5.5.7",
     "zone.js": "0.8.20"
   },
   "devDependencies": {
     "@angular/cli": "~<%= version %>",
-    "@angular/compiler-cli": "^5.2.0",
-    "@angular/language-service": "^5.2.0",<% if (!minimal) { %>
-    "@types/node": "8.9.4",
+    "@angular/compiler-cli": "^5.2.9",
+    "@angular/language-service": "^5.2.9",<% if (!minimal) { %>
+    "@types/node": "8.9.5",
     "jest": "22.4.2",
     "jest-preset-angular": "5.2.1",
     "testcafe": "0.19.1",
