@@ -33,11 +33,10 @@ function minimalPathFilter(path: string): boolean {
     /e2e\//,
     /editorconfig/,
     /README/,
-    /karma.conf.js/,
-    /protractor.conf.js/,
-    /test.ts/,
+    /jest.config.js/,
+    /setup-test.ts/,
+    /jest-global-mocks.ts/,
     /tsconfig.spec.json/,
-    /tslint.json/,
     /favicon.ico/,
   ];
 
@@ -117,7 +116,7 @@ export default function(options: ApplicationOptions): Rule {
           !componentOptions.spec ? filter((path) => !path.endsWith('.spec.ts')) : noop(),
           template({
             utils: strings,
-            ...(options as any), // tslint:disable-line:no-any
+            ...options,
             selector: appRootSelector,
             ...componentOptions,
           }),
