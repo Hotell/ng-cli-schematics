@@ -1,5 +1,7 @@
 # @martin_hotell/schematics
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Hotell/ng-cli-schematics.svg)](https://greenkeeper.io/)
+
 Scaffolding library for Angular applications with better defaults.
 
 @martin_hotell/schematics provides blueprints for generating Angular apps with better defaults/tooling. Built on top of `Schematics`, it integrates with the `Angular CLI` to make setting up Angular applications easier.
