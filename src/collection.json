@@ -21,7 +21,7 @@
     "application": {
       "factory": "./application",
       "schema": "./application/schema.json",
-      "description": "Create an Angular application."
+      "description": "Create an Angular application with better defaults."
     },
     "component": {
       "aliases": ["c"],

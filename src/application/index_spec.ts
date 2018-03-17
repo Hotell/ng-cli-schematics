@@ -37,6 +37,7 @@ describe('Application Schematic', () => {
 
     expect(files.indexOf('/foo/.vscode/settings.json')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/.vscode/extensions.json')).toBeGreaterThanOrEqual(0);
+
     expect(files.indexOf('/foo/.editorconfig')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/.angular-cli.json')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/.gitignore')).toBeGreaterThanOrEqual(0);
@@ -58,14 +59,18 @@ describe('Application Schematic', () => {
     expect(files.indexOf('/foo/src/index.html')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/main.ts')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/polyfills.ts')).toBeGreaterThanOrEqual(0);
+    expect(files.indexOf('/foo/src/setup-jest.ts')).toBeGreaterThanOrEqual(0);
+    expect(files.indexOf('/foo/src/jest-global-mocks.ts')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/styles.css')).toBeGreaterThanOrEqual(0);
-    expect(files.indexOf('/foo/src/test.ts')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/tsconfig.app.json')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/tsconfig.spec.json')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/typings.d.ts')).toBeGreaterThanOrEqual(0);
+
     expect(files.indexOf('/foo/src/assets/.gitkeep')).toBeGreaterThanOrEqual(0);
+
     expect(files.indexOf('/foo/src/environments/environment.prod.ts')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/environments/environment.ts')).toBeGreaterThanOrEqual(0);
+
     expect(files.indexOf('/foo/src/app/app.module.ts')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/app/app.component.css')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/app/app.component.html')).toBeGreaterThanOrEqual(0);
@@ -80,7 +85,7 @@ describe('Application Schematic', () => {
     expect(() => (tree = schematicRunner.runSchematic('application', options))).not.toThrow();
 
     if (tree) {
-      // tslint:disable-next-line:non-null-operator
+      // tslint:disable-next-line:no-non-null-assertion
       const files = tree!.files;
       expect(files.indexOf('/foo/some/custom/path/app/app.module.ts')).toBeGreaterThanOrEqual(0);
       expect(files.indexOf('/foo/some/custom/path/tsconfig.app.json')).toBeGreaterThanOrEqual(0);
