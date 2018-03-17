@@ -5,7 +5,7 @@
   "scripts": {
     "prebuilt": "yarn verify",
     "build": "tsc",
-    "test": "tsc && jasmine **/*_spec.js",
+    "test": "tsc && jasmine src/**/*_spec.js",
     "format": "prettier src/**/*.{ts,js,json,md,scss,less,css} --config .prettierrc --write",
     "lint": "tslint --project tsconfig.json --format codeFrame --fix",
     "style": "yarn format && yarn lint",

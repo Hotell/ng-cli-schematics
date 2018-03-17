@@ -12,6 +12,8 @@
     ]
   },
   "jsRules": {},
-  "rules": {},
+  "rules": {
+    "no-non-null-assertion": true
+  },
   "rulesDirectory": []
 }
