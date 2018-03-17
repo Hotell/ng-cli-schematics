@@ -72,5 +72,9 @@
     "tslint-config-prettier": "1.10.0",
     "tslint-config-standard": "7.0.0",
     "typescript": "2.7.2"
+  },
+  "peerDependencies": {
+    "@angular-devkit/core": "0.4.6",
+    "@angular-devkit/schematics": "0.4.6"
   }
 }
