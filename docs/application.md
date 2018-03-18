@@ -29,13 +29,26 @@ All default Angular CLI `new` options are preserved + new ones are available:
 Adds Angular material
 
 * `--material`
+
   * Type: `boolean`
   * Default: `false`
 
+Select Angular material theme
+
+* `--matTheme`
+  * Type: `'deeppurple-amber'` | 'indigo-pink' | 'pink-bluegrey' | 'purple-green'`
+  * Default: `indigo-pink`
+
 #### Examples
 
-Generate new app with angular material
+Generate new app with angular material and default theme
 
 ```sh
 ng new my-app --material
+```
+
+Generate new app with angular material and different theme
+
+```sh
+ng new my-app --material --matTheme pink-bluegrey
 ```

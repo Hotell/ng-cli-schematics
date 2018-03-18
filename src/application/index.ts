@@ -21,6 +21,7 @@ import {
   template,
   url,
   TemplateOptions,
+  SchematicsException,
 } from '@angular-devkit/schematics';
 import {
   NodePackageInstallTask,
@@ -28,6 +29,8 @@ import {
   RepositoryInitializerTask,
 } from '@angular-devkit/schematics/tasks';
 import { AngularApplicationOptionsSchema as ApplicationOptions } from './schema';
+
+const MAT_THEME_DEFAULT = 'indigo-pink';
 
 function minimalPathFilter(path: string): boolean {
   const toRemoveList: RegExp[] = [
@@ -83,6 +86,13 @@ export default function(options: ApplicationOptions): Rule {
         new RepositoryInitializerTask(options.directory, options.commit!),
         packageTask ? [packageTask] : []
       );
+    }
+
+    if (options.matTheme && !options.material) {
+      throw new SchematicsException(`You cannot use --matTheme without --material flag`);
+    }
+    if (options.material) {
+      options.matTheme = options.matTheme ? options.matTheme : MAT_THEME_DEFAULT;
     }
 
     return chain([

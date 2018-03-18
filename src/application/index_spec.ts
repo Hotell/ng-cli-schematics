@@ -28,7 +28,7 @@ describe('Application Schematic', () => {
     skipTests: false,
     minimal: false,
     material: false,
-    matTheme: 'indigo-pink',
+    matTheme: '',
   };
 
   it('should create all files of an application', () => {
@@ -188,5 +188,23 @@ describe('Application Schematic', () => {
     expect(styleContent).toMatch(
       /@import \'~@angular\/material\/prebuilt-themes\/deeppurple-amber.css\';/
     );
+  });
+
+  it(`should throw if --matTheme is used without --material`, () => {
+    const options: ApplicationOptions = {
+      ...defaultOptions,
+      matTheme: 'deeppurple-amber',
+    };
+
+    let thrownError: Error | null = null;
+    try {
+      schematicRunner.runSchematic('application', options);
+    } catch (err) {
+      thrownError = err;
+    }
+
+    expect(thrownError).toBeDefined();
+    // tslint:disable-next-line:no-non-null-assertion
+    expect(thrownError!.message).toContain('You cannot use --matTheme without --material flag');
   });
 });

@@ -137,9 +137,9 @@
     },
     "matTheme": {
       "description": "The Material theme to load.",
-      "enum": ["deeppurple-amber", "indigo-pink", "pink-bluegrey", "purple-green"],
+      "enum": ["deeppurple-amber", "indigo-pink", "pink-bluegrey", "purple-green", ""],
       "type": "string",
-      "default": "indigo-pink"
+      "default": ""
     }
   },
   "required": ["name", "directory"]
