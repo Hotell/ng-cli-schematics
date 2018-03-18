@@ -1,3 +1,7 @@
 {
-  "tslint.enable": true
+  "tslint.enable": true,
+  "files.associations": {
+    "**/files/**/*.json": "ejs",
+    "**/files/**/*.ts": "ejs"
+  }
 }
