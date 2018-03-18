@@ -1,6 +1,6 @@
 {
   "name": "@martin_hotell/schematics",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Angular CLI schematics with better defaults",
   "engines": {
     "node": ">=8.9.0"
@@ -13,7 +13,7 @@
     "lint": "tslint --project tsconfig.json --format codeFrame --fix",
     "style": "yarn format && yarn lint",
     "verify": "yarn format && yarn lint && yarn test",
-    "generate:schemas":"node scripts/generate-schema-defs.js",
+    "generate:schemas": "node scripts/generate-schema-defs.js",
     "cz": "git-cz",
     "prerelease": "yarn build",
     "release": "standard-version",
