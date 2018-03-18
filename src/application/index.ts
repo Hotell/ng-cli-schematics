@@ -20,13 +20,14 @@ import {
   schematic,
   template,
   url,
+  TemplateOptions,
 } from '@angular-devkit/schematics';
 import {
   NodePackageInstallTask,
   NodePackageLinkTask,
   RepositoryInitializerTask,
 } from '@angular-devkit/schematics/tasks';
-import { Schema as ApplicationOptions } from './schema';
+import { AngularApplicationOptionsSchema as ApplicationOptions } from './schema';
 
 function minimalPathFilter(path: string): boolean {
   const toRemoveList: RegExp[] = [
@@ -71,7 +72,8 @@ export default function(options: ApplicationOptions): Rule {
     }
     if (!options.skipGit) {
       context.addTask(
-        new RepositoryInitializerTask(options.directory, options.commit),
+        // tslint:disable-next-line:no-non-null-assertion
+        new RepositoryInitializerTask(options.directory, options.commit!),
         packageTask ? [packageTask] : []
       );
     }
@@ -84,7 +86,8 @@ export default function(options: ApplicationOptions): Rule {
           options.serviceWorker ? noop() : filter((path) => !path.endsWith('/ngsw-config.json')),
           template({
             utils: strings,
-            ...options,
+            // @FIXME TemplateOptions has bad definition, as null is allowed by implementation not by type def though
+            ...(options as TemplateOptions),
             dot: '.',
             sourcedir: sourceDir,
           }),
@@ -116,7 +119,8 @@ export default function(options: ApplicationOptions): Rule {
           !componentOptions.spec ? filter((path) => !path.endsWith('.spec.ts')) : noop(),
           template({
             utils: strings,
-            ...options,
+            // @FIXME TemplateOptions has bad definition, as null is allowed by implementation not by type def though
+            ...(options as TemplateOptions),
             selector: appRootSelector,
             ...componentOptions,
           }),
