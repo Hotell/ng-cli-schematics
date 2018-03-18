@@ -21,6 +21,7 @@ import {
   template,
   url,
   TemplateOptions,
+  SchematicsException,
 } from '@angular-devkit/schematics';
 import {
   NodePackageInstallTask,
@@ -28,6 +29,8 @@ import {
   RepositoryInitializerTask,
 } from '@angular-devkit/schematics/tasks';
 import { AngularApplicationOptionsSchema as ApplicationOptions } from './schema';
+
+const MAT_THEME_DEFAULT = 'indigo-pink';
 
 function minimalPathFilter(path: string): boolean {
   const toRemoveList: RegExp[] = [
@@ -43,6 +46,13 @@ function minimalPathFilter(path: string): boolean {
 
   return !toRemoveList.some((re) => re.test(path));
 }
+
+function materialPathFilter(path: string): boolean {
+  const toRemoveList = [/material\//];
+
+  return !toRemoveList.some((re) => re.test(path));
+}
+
 export default function(options: ApplicationOptions): Rule {
   return (host: Tree, context: SchematicContext) => {
     const appRootSelector = `${options.prefix}-root`;
@@ -76,6 +86,13 @@ export default function(options: ApplicationOptions): Rule {
         new RepositoryInitializerTask(options.directory, options.commit!),
         packageTask ? [packageTask] : []
       );
+    }
+
+    if (options.matTheme && !options.material) {
+      throw new SchematicsException(`You cannot use --matTheme without --material flag`);
+    }
+    if (options.material) {
+      options.matTheme = options.matTheme ? options.matTheme : MAT_THEME_DEFAULT;
     }
 
     return chain([
@@ -117,6 +134,7 @@ export default function(options: ApplicationOptions): Rule {
         apply(url('./other-files'), [
           componentOptions.inlineTemplate ? filter((path) => !path.endsWith('.html')) : noop(),
           !componentOptions.spec ? filter((path) => !path.endsWith('.spec.ts')) : noop(),
+          !options.material ? filter(materialPathFilter) : noop(),
           template({
             utils: strings,
             // @FIXME TemplateOptions has bad definition, as null is allowed by implementation not by type def though

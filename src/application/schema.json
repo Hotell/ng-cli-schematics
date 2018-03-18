@@ -129,6 +129,17 @@
       "description": "Installs the @angular/service-worker.",
       "type": "boolean",
       "default": false
+    },
+    "material": {
+      "description": "Installs the @angular/material",
+      "type": "boolean",
+      "default": false
+    },
+    "matTheme": {
+      "description": "The Material theme to load.",
+      "enum": ["deeppurple-amber", "indigo-pink", "pink-bluegrey", "purple-green", ""],
+      "type": "string",
+      "default": ""
     }
   },
   "required": ["name", "directory"]

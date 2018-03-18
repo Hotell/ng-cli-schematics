@@ -27,6 +27,8 @@ describe('Application Schematic', () => {
     style: 'css',
     skipTests: false,
     minimal: false,
+    material: false,
+    matTheme: '',
   };
 
   it('should create all files of an application', () => {
@@ -65,6 +67,8 @@ describe('Application Schematic', () => {
     expect(files.indexOf('/foo/src/tsconfig.app.json')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/tsconfig.spec.json')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/typings.d.ts')).toBeGreaterThanOrEqual(0);
+
+    expect(files.indexOf('/foo/src/material/material.module.ts')).toBe(-1);
 
     expect(files.indexOf('/foo/src/assets/.gitkeep')).toBeGreaterThanOrEqual(0);
 
@@ -131,5 +135,75 @@ describe('Application Schematic', () => {
     const options = { ...defaultOptions, directory: 'my-dir' };
     const tree = schematicRunner.runSchematic('application', options);
     expect(tree.exists('/my-dir/package.json')).toEqual(true);
+  });
+
+  it(`should use material option`, () => {
+    const options: ApplicationOptions = { ...defaultOptions, material: true };
+    const tree = schematicRunner.runSchematic('application', options);
+    const files = tree.files;
+
+    expect(files.indexOf('/foo/src/app/material/index.ts')).toBeGreaterThanOrEqual(0);
+    expect(files.indexOf('/foo/src/app/material/material.module.ts')).toBeGreaterThanOrEqual(0);
+
+    const appModulePath = '/foo/src/app/app.module.ts';
+    const appModuleContent = tree.readContent(appModulePath);
+
+    expect(appModuleContent).toMatch(/import { MaterialModule } from \'\.\/material\';/);
+    expect(appModuleContent).toMatch(
+      /import { BrowserAnimationsModule } from \'@angular\/platform-browser\/animations\';/
+    );
+
+    const mainPath = '/foo/src/main.ts';
+    const mainPathContent = tree.readContent(mainPath);
+
+    expect(mainPathContent).toMatch(/import \'hammerjs\';/);
+
+    const stylePath = '/foo/src/styles.css';
+    const styleContent = tree.readContent(stylePath);
+
+    expect(styleContent).toMatch(
+      /@import \'~@angular\/material\/prebuilt-themes\/indigo-pink.css\';/
+    );
+
+    const htmlPath = '/foo/src/index.html';
+    const htmlContent = tree.readContent(htmlPath);
+
+    expect(htmlContent).toMatch(
+      /<link href="https:\/\/fonts\.googleapis\.com\/icon\?family=Material\+Icons\" rel=\"stylesheet\">/
+    );
+  });
+
+  it(`should use matTheme option`, () => {
+    const options: ApplicationOptions = {
+      ...defaultOptions,
+      material: true,
+      matTheme: 'deeppurple-amber',
+    };
+    const tree = schematicRunner.runSchematic('application', options);
+
+    const stylePath = '/foo/src/styles.css';
+    const styleContent = tree.readContent(stylePath);
+
+    expect(styleContent).toMatch(
+      /@import \'~@angular\/material\/prebuilt-themes\/deeppurple-amber.css\';/
+    );
+  });
+
+  it(`should throw if --matTheme is used without --material`, () => {
+    const options: ApplicationOptions = {
+      ...defaultOptions,
+      matTheme: 'deeppurple-amber',
+    };
+
+    let thrownError: Error | null = null;
+    try {
+      schematicRunner.runSchematic('application', options);
+    } catch (err) {
+      thrownError = err;
+    }
+
+    expect(thrownError).toBeDefined();
+    // tslint:disable-next-line:no-non-null-assertion
+    expect(thrownError!.message).toContain('You cannot use --matTheme without --material flag');
   });
 });

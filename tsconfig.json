@@ -13,16 +13,17 @@
     "strict": true,
     "strictFunctionTypes": false,
     "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    // @lint rules
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedParameters": true
+    // "noUnusedLocals": true,
   },
   "include": [
     "src/**/*"
