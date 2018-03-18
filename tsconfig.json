@@ -17,7 +17,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "types": [
-      "jasmine",
+      "jest",
       "node"
     ],
     // @lint rules
