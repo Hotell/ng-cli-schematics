@@ -1,6 +1,11 @@
 # @martin_hotell/schematics
 
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Greenkeeper badge](https://badges.greenkeeper.io/Hotell/ng-cli-schematics.svg)](https://greenkeeper.io/)
+[![Travis](https://img.shields.io/travis/Hotell/ng-cli-schematics.svg)](https://travis-ci.org/Hotell/ng-cli-schematics)
+[![Dev Dependencies](https://david-dm.org/Hotell/ng-cli-schematics/dev-status.svg)](https://david-dm.org/Hotell/ng-cli-schematics?type=dev)
+[![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg)](https://github.com/conventional-changelog/standard-version)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 Scaffolding library for Angular applications with better defaults.
 

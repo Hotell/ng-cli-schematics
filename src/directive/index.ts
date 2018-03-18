@@ -25,7 +25,7 @@ import * as ts from 'typescript';
 import { addDeclarationToModule, addExportToModule } from '../utility/ast-utils';
 import { InsertChange } from '../utility/change';
 import { buildRelativePath, findModuleFromOptions } from '../utility/find-module';
-import { Schema as DirectiveOptions } from './schema';
+import { AngularDirectiveOptionsSchema as DirectiveOptions } from './schema';
 
 function addDeclarationToNgModule(options: DirectiveOptions): Rule {
   return (host: Tree) => {

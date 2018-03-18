@@ -8,7 +8,7 @@
       "type": "string",
       "format": "path",
       "description": "The directory name to create the app in.",
-      "default": ""
+      "alias": "dir"
     },
     "path": {
       "type": "string",
@@ -22,7 +22,7 @@
       "format": "path",
       "description": "The path of the source directory.",
       "default": "src",
-      "alias": "D",
+      "alias": "sd",
       "visible": false
     },
     "name": {
@@ -38,18 +38,19 @@
       "description": "Specifies if the style will be in the ts file.",
       "type": "boolean",
       "default": false,
-      "alias": "s"
+      "alias": "is"
     },
     "inlineTemplate": {
       "description": "Specifies if the template will be in the ts file.",
       "type": "boolean",
       "default": false,
-      "alias": "t"
+      "alias": "it"
     },
     "viewEncapsulation": {
       "description": "Specifies the view encapsulation strategy.",
       "enum": ["Emulated", "Native", "None"],
-      "type": "string"
+      "type": "string",
+      "alias": "ve"
     },
     "version": {
       "type": "string",
@@ -94,7 +95,7 @@
       "description": "Skip initializing a git repository.",
       "type": "boolean",
       "default": false,
-      "alias": "g"
+      "alias": "sg"
     },
     "commit": {
       "description": "Initial repository commit information.",
@@ -128,7 +129,18 @@
       "description": "Installs the @angular/service-worker.",
       "type": "boolean",
       "default": false
+    },
+    "material": {
+      "description": "Installs the @angular/material",
+      "type": "boolean",
+      "default": false
+    },
+    "matTheme": {
+      "description": "The Material theme to load.",
+      "enum": ["deeppurple-amber", "indigo-pink", "pink-bluegrey", "purple-green", ""],
+      "type": "string",
+      "default": ""
     }
   },
-  "required": []
+  "required": ["name", "directory"]
 }

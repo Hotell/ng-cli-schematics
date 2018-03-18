@@ -25,7 +25,7 @@ import * as ts from 'typescript';
 import { addProviderToModule } from '../utility/ast-utils';
 import { InsertChange } from '../utility/change';
 import { buildRelativePath, findModuleFromOptions } from '../utility/find-module';
-import { Schema as ServiceOptions } from './schema';
+import { AngularServiceOptionsSchema as ServiceOptions } from './schema';
 
 function addProviderToNgModule(options: ServiceOptions): Rule {
   return (host: Tree) => {
