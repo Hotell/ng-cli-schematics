@@ -180,7 +180,6 @@ describe('Application Schematic', () => {
       matTheme: 'deeppurple-amber',
     };
     const tree = schematicRunner.runSchematic('application', options);
-    const files = tree.files;
 
     const stylePath = '/foo/src/styles.css';
     const styleContent = tree.readContent(stylePath);
