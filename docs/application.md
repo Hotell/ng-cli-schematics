@@ -22,9 +22,16 @@ ng new --collection @martin_hotell/schematics my-app [options]
 ng new -c @martin_hotell/schematics my-app [options]
 ```
 
-### Options
+### General Options
 
-All default Angular CLI `new` options are preserved + new ones are available:
+`Angular CLI` [new options](https://github.com/angular/angular-cli/wiki/new).
+
+> **general `ng new` differences:**
+>
+> * inline templates turned on by default
+> * lintFix turned on by default
+
+### Options
 
 Adds Angular material
 
@@ -39,16 +46,31 @@ Select Angular material theme
   * Type: `'deeppurple-amber' | 'indigo-pink' | 'pink-bluegrey' | 'purple-green'`
   * Default: `indigo-pink`
 
+Setup default Change Detection for Components
+
+* `--changeDetection`
+  * Alias: `-cd`
+  * Type: `'Default' | 'OnPush'`
+  * Default: `Default`
+
 #### Examples
 
 Generate new app with angular material and default theme
 
 ```sh
-ng new my-app --material
+ng new my-app --material -c @martin_hotell/schematics
 ```
 
 Generate new app with angular material and different theme
 
 ```sh
-ng new my-app --material --matTheme pink-bluegrey
+ng new my-app --material --matTheme pink-bluegrey -c @martin_hotell/schematics
+```
+
+Generate new app with OnPush change detection
+
+```sh
+ng new my-app --changeDetection OnPush -c @martin_hotell/schematics
+# or
+ng new my-app -cd OnPush -c @martin_hotell/schematics
 ```
