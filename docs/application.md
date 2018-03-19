@@ -19,7 +19,7 @@ More info can be found in [my blogpost](https://medium.com/@martin_hotell/use-re
 ```sh
 ng new --collection @martin_hotell/schematics my-app [options]
 # or
-ng new --c @martin_hotell/schematics my-app [options]
+ng new -c @martin_hotell/schematics my-app [options]
 ```
 
 ### Options
@@ -36,7 +36,7 @@ Adds Angular material
 Select Angular material theme
 
 * `--matTheme`
-  * Type: `'deeppurple-amber'` | 'indigo-pink' | 'pink-bluegrey' | 'purple-green'`
+  * Type: `'deeppurple-amber' | 'indigo-pink' | 'pink-bluegrey' | 'purple-green'`
   * Default: `indigo-pink`
 
 #### Examples

@@ -36,7 +36,23 @@ The [collection schema](./src/collection.json) also has aliases to the most comm
 
 ## App Setup
 
-Generate new app with better defaults
+Generate new Angualr app with better defaults/tools!
+
+**NOTE:**
+
+> There is ongoing issue with schematics/angularCLI so custom collections doesn't work when installed globally for booting new apps.
+>
+> Follow [this issue](https://github.com/angular/devkit/issues/528) to get updated on the status.
+>
+> You need to do following nasty workaround to make it work:
+
+> ```sh
+> mkdir -p /usr/local/lib/node_modules/@martin_hotell/schematics/
+>
+> cp -R /usr/local/lib/node_modules/@martin_hotell/schematics/* /usr/local/lib/node_modules/@angular/cli/node_modules/@martin_hotell/schematics/
+> ```
+
+> 👉 update your path to global npm packages accordingly to your environment `/usr/local/lib/node_modules`
 
 ```sh
 npx -p @angular/cli -p @martin_hotell/schematics -c 'ng new my-app --collection @martin_hotell/schematics'
@@ -44,9 +60,13 @@ npx -p @angular/cli -p @martin_hotell/schematics -c 'ng new my-app --collection 
 
 or if you like to pollute your global environment:
 
+**Install:**
+
 ```sh
 npm i -g @angular/cli @martin_hotell/schematics
+```
 
+```
 ng new my-app --collection @martin_hotell/schematics
 # or
 ng new my-app -c @martin_hotell/schematics
@@ -68,7 +88,7 @@ schematics --help
 
 ### Unit Testing
 
-`npm test` will run the unit tests, using Jasmine as a runner and test framework.
+`npm test` will run the unit tests, using [Jest](https://facebook.github.io/jest/) as a runner and test framework.
 
 ### Publishing
 
@@ -82,4 +102,4 @@ git push --follow-tags origin master
 npm publish
 ```
 
-That's it!
+That's it! 🖖
