@@ -20,8 +20,9 @@ describe('Application Schematic', () => {
     name: 'foo',
     sourceDir: 'src',
     inlineStyle: false,
-    inlineTemplate: false,
+    inlineTemplate: true,
     viewEncapsulation: 'Emulated',
+    changeDetection: 'Default',
     version: '1.2.3',
     routing: false,
     style: 'css',
@@ -77,7 +78,7 @@ describe('Application Schematic', () => {
 
     expect(files.indexOf('/foo/src/app/app.module.ts')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/app/app.component.css')).toBeGreaterThanOrEqual(0);
-    expect(files.indexOf('/foo/src/app/app.component.html')).toBeGreaterThanOrEqual(0);
+    expect(files.indexOf('/foo/src/app/app.component.html')).toBe(-1);
     expect(files.indexOf('/foo/src/app/app.component.spec.ts')).toBeGreaterThanOrEqual(0);
     expect(files.indexOf('/foo/src/app/app.component.ts')).toBeGreaterThanOrEqual(0);
   });
@@ -205,5 +206,17 @@ describe('Application Schematic', () => {
     expect(thrownError).toBeDefined();
     // tslint:disable-next-line:no-non-null-assertion
     expect(thrownError!.message).toContain('You cannot use --matTheme without --material flag');
+  });
+
+  it(`should handle --changeDetection option`, () => {
+    const options: ApplicationOptions = {
+      ...defaultOptions,
+      changeDetection: 'OnPush',
+    };
+    const tree = schematicRunner.runSchematic('application', options);
+    const ngCliConfigPath = '/foo/.angular-cli.json';
+    const ngCliConfigContent = tree.readContent(ngCliConfigPath);
+
+    expect(ngCliConfigContent).toMatch(/"changeDetection": "OnPush"/);
   });
 });

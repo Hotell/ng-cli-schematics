@@ -43,7 +43,7 @@
     "inlineTemplate": {
       "description": "Specifies if the template will be in the ts file.",
       "type": "boolean",
-      "default": false,
+      "default": true,
       "alias": "it"
     },
     "viewEncapsulation": {
@@ -51,6 +51,13 @@
       "enum": ["Emulated", "Native", "None"],
       "type": "string",
       "alias": "ve"
+    },
+    "changeDetection": {
+      "description": "Specifies the change detection strategy.",
+      "enum": ["Default", "OnPush"],
+      "type": "string",
+      "default": "Default",
+      "alias": "cd"
     },
     "version": {
       "type": "string",
