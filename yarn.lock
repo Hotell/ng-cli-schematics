@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/core@0.4.6":
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.4.6.tgz#8a0e43f918a933f230d039945dc53612a89c666a"
+"@angular-devkit/core@0.4.8":
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.4.8.tgz#449718ec31de765f69f9fb7bead3a74f5b54c875"
   dependencies:
     ajv "~5.5.1"
     chokidar "^1.7.0"
-    rxjs "^5.5.6"
+    rxjs "^5.5.8"
     source-map "^0.5.6"
 
-"@angular-devkit/schematics@0.4.6":
-  version "0.4.6"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.4.6.tgz#700ebe2887ae7e9823509461174cb8100abed8da"
+"@angular-devkit/schematics@0.4.8":
+  version "0.4.8"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.4.8.tgz#4fbe8d3e243771a96f20e7a5b2cd5152310f27cd"
   dependencies:
     "@ngtools/json-schema" "^1.1.0"
-    rxjs "^5.5.6"
+    rxjs "^5.5.8"
 
 "@babel/code-frame@^7.0.0-beta.35":
   version "7.0.0-beta.42"
@@ -170,9 +170,9 @@
   version "0.3.29"
   resolved "https://registry.yarnpkg.com/@types/cli-color/-/cli-color-0.3.29.tgz#c83a71fe02c8c7e1ccec048dd6a2458d1f6c96ea"
 
-"@types/jest@22.2.0":
-  version "22.2.0"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.2.0.tgz#55ce83139f7ad1b48b414c3927746614c6963c0f"
+"@types/jest@22.2.1":
+  version "22.2.1"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.2.1.tgz#fe798757afc13880e03e3644a3448d7b3dd878d8"
 
 "@types/json-schema@^4.0.0":
   version "4.0.0"
@@ -4182,9 +4182,15 @@ rx@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
 
-rxjs@^5.4.2, rxjs@^5.5.6:
+rxjs@^5.4.2:
   version "5.5.7"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.7.tgz#afb3d1642b069b2fbf203903d6501d1acb4cda27"
+  dependencies:
+    symbol-observable "1.0.1"
+
+rxjs@^5.5.8:
+  version "5.5.8"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.5.8.tgz#b2b0809a57614ad6254c03d7446dea0d83ca3791"
   dependencies:
     symbol-observable "1.0.1"
 

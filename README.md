@@ -47,15 +47,15 @@ Generate new Angualr app with better defaults/tools!
 > You need to do following nasty workaround to make it work:
 
 > ```sh
-> mkdir -p /usr/local/lib/node_modules/@martin_hotell/schematics/
+> mkdir -p /usr/local/lib/node_modules/@angular/cli/node_modules/@martin_hotell/schematics
 >
-> cp -R /usr/local/lib/node_modules/@martin_hotell/schematics/* /usr/local/lib/node_modules/@angular/cli/node_modules/@martin_hotell/schematics/
+> cp -R /usr/local/lib/node_modules/@martin_hotell/schematics/* /usr/local/lib/node_modules/@angular/cli/node_modules/@martin_hotell/schematics
 > ```
 
 > 👉 update your path to global npm packages accordingly to your environment `/usr/local/lib/node_modules`
 
 ```sh
-npx -p @angular/cli -p @martin_hotell/schematics -c 'ng new my-app --collection @martin_hotell/schematics'
+npx -p @angular-devkit/schematics-cli -p @angular-devkit/schematics -p @angular-devkit/core -p @angular/cli -p typescript -p @martin_hotell/schematics -c "ng new my-app --collection @martin_hotell/schematics"
 ```
 
 or if you like to pollute your global environment:
