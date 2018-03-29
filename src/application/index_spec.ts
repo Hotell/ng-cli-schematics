@@ -219,4 +219,28 @@ describe('Application Schematic', () => {
 
     expect(ngCliConfigContent).toMatch(/"changeDetection": "OnPush"/);
   });
+
+  it(`should create valid .angular-cli.json file`, () => {
+    const options: ApplicationOptions = {
+      ...defaultOptions,
+      inlineTemplate: false,
+      inlineStyle: true,
+      changeDetection: 'OnPush',
+    };
+    const tree = schematicRunner.runSchematic('application', options);
+    const ngCliConfigPath = '/foo/.angular-cli.json';
+    const ngCliConfigContent = getFileContent(tree, ngCliConfigPath);
+
+    let thrownError: Error | null = null;
+    try {
+      JSON.parse(ngCliConfigContent);
+    } catch (err) {
+      thrownError = err;
+    }
+
+    expect(thrownError).toBe(null);
+    expect(ngCliConfigContent).toMatch(/"changeDetection": "OnPush"/);
+    expect(ngCliConfigContent).toMatch(/"inlineStyle": true/);
+    expect(ngCliConfigContent).not.toMatch(/"inlineTemplate": false/);
+  });
 });
