@@ -1,6 +1,6 @@
 {
   "name": "@martin_hotell/schematics",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Angular CLI schematics with better defaults",
   "engines": {
     "node": ">=8.9.0"
@@ -34,7 +34,10 @@
       "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|(\\.|/|_)(test|spec))\\.(tsx?)$",
-    "testPathIgnorePatterns": ["<rootDir>/.*/(files|other-files)", "<rootDir>/node_modules/"],
+    "testPathIgnorePatterns": [
+      "<rootDir>/.*/(files|other-files)",
+      "<rootDir>/node_modules/"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
