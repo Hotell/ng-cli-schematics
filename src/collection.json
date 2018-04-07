@@ -6,6 +6,11 @@
       "schema": "./application/schema.json",
       "description": "Create an Angular application with better defaults."
     },
+    "jest": {
+      "factory": "./jest",
+      "schema": "./jest/schema.json",
+      "description": "Add configured Jest testing framework"
+    },
     "component": {
       "aliases": ["c"],
       "factory": "./component",

@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsAddJest",
+  "title": "Adding Jest for unit testing Schema",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The name of the project."
+    },
+    "replace": {
+      "type": "boolean",
+      "description": "Flag if it should remove any existing karma and jasmine related config",
+      "default": "false"
+    }
+  },
+  "required": ["project"]
+}

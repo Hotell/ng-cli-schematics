@@ -167,6 +167,14 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@ngtools/json-schema/-/json-schema-1.1.0.tgz#c3a0c544d62392acc2813a42c8a0dc6f58f86922"
 
+"@schematics/angular@0.5.4":
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-0.5.4.tgz#1c87706703a985fd291d283a4db1a9fc0aa6238f"
+  dependencies:
+    "@angular-devkit/core" "0.5.4"
+    "@angular-devkit/schematics" "0.5.4"
+    typescript "~2.6.2"
+
 "@types/cli-color@^0.3.29":
   version "0.3.29"
   resolved "https://registry.yarnpkg.com/@types/cli-color/-/cli-color-0.3.29.tgz#c83a71fe02c8c7e1ccec048dd6a2458d1f6c96ea"
@@ -4830,6 +4838,10 @@ typedarray@^0.0.6:
 typescript@2.7.2:
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
+
+typescript@~2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
 
 uglify-js@^2.6:
   version "2.8.29"
