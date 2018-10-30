@@ -171,9 +171,9 @@
   version "0.3.29"
   resolved "https://registry.yarnpkg.com/@types/cli-color/-/cli-color-0.3.29.tgz#c83a71fe02c8c7e1ccec048dd6a2458d1f6c96ea"
 
-"@types/jest@22.2.2":
-  version "22.2.2"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-22.2.2.tgz#afe5dacbd00d65325f52da0ed3e76e259629ac9d"
+"@types/jest@23.3.9":
+  version "23.3.9"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.9.tgz#c16b55186ee73ae65e001fbee69d392c51337ad1"
 
 "@types/json-schema@^4.0.0":
   version "4.0.0"
