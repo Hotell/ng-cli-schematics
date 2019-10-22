@@ -199,9 +199,10 @@
   version "9.4.7"
   resolved "http://registry.npmjs.org/@types/node/-/node-9.4.7.tgz#57d81cd98719df2c9de118f2d5f3b1120dcd7275"
 
-"@types/node@8.10.3":
-  version "8.10.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.3.tgz#ee34a5c732703cf45d2fadc163a299a6b2f456c2"
+"@types/node@12.11.3":
+  version "12.11.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.11.3.tgz#582052915e50820b7416115386e606c27d5e399f"
+  integrity sha512-BPYM8PITgHTK8I2PV8E0vPp6g1g9HXeVSs2Ic9ilMImT19LilL0l7pYnupFnmoXyVsLqvVnO0uo8dcMG89ntBA==
 
 "@types/node@^8.0.50":
   version "8.9.5"
